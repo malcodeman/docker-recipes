@@ -19,6 +19,19 @@ RUN pip install -r requirements.txt
 CMD gunicorn --bind 0.0.0.0:$PORT wsgi
 ```
 
+### node
+
+```
+FROM node:12-alpine
+WORKDIR /app
+COPY package.json ./
+COPY yarn.lock ./
+RUN yarn install --production
+COPY . .
+EXPOSE 8000
+CMD node server.js
+```
+
 ## License
 
 [MIT](./LICENSE)
