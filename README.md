@@ -9,7 +9,7 @@ These are some use cases and code snippets to get you started with Docker.
 
 ### python
 
-```
+```dockerfile
 FROM python:3-alpine
 RUN pip install --upgrade pip
 RUN mkdir /src
@@ -21,7 +21,7 @@ CMD gunicorn --bind 0.0.0.0:$PORT wsgi
 
 ### node
 
-```
+```dockerfile
 FROM node:12-alpine
 WORKDIR /app
 COPY package.json ./
